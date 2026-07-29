@@ -8,6 +8,17 @@
       content="Raj Premium Leather showcases premium handbags with a cinematic landing page focused on material, detail, and luxury presentation."
     />
     <title>Raj Premium Leather | Premium Handbags</title>
+    <script>
+      ;(function (location) {
+        if (location.search[1] !== '/') return
+        const decoded = location.search
+          .slice(1)
+          .split('&')
+          .map((segment) => segment.replace(/~and~/g, '&'))
+          .join('?')
+        window.history.replaceState(null, '', location.pathname.slice(0, -1) + decoded + location.hash)
+      })(window.location)
+    </script>
   </head>
   <body>
     <div id="app"></div>
