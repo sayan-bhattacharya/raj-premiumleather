@@ -1,0 +1,20 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#1A120E"/>
+  <ellipse cx="1132" cy="224" rx="314" ry="220" fill="#C78442" fill-opacity=".18"/>
+  <ellipse cx="1268" cy="188" rx="111" ry="111" fill="#F7E2C2" fill-opacity=".2"/>
+  <rect x="92" y="114" width="582" height="772" rx="28" fill="url(#panel)"/>
+  <path d="M865 263H1459" stroke="#A06C3B" stroke-width="1.5" stroke-opacity=".35"/>
+  <path d="M865 401H1459" stroke="#A06C3B" stroke-width="1.5" stroke-opacity=".35"/>
+  <path d="M865 539H1459" stroke="#A06C3B" stroke-width="1.5" stroke-opacity=".35"/>
+  <text x="865" y="205" fill="#C78442" font-family="Georgia, serif" font-size="28" letter-spacing="8">RAJ PREMIUM LEATHER</text>
+  <text x="865" y="315" fill="#F9F0E2" font-family="Georgia, serif" font-size="94">Made for India</text>
+  <text x="865" y="412" fill="#F9F0E2" font-family="Georgia, serif" font-size="94">Crafted to Travel</text>
+  <text x="865" y="596" fill="#D8C0A2" font-family="Arial, sans-serif" font-size="28" letter-spacing="2">Launch film concept with warm editorial lighting, leather texture, and cinematic reveal.</text>
+  <text x="865" y="654" fill="#D8C0A2" font-family="Arial, sans-serif" font-size="28" letter-spacing="2">HyperFrames export ready. Framer look-dev friendly. Client-demo safe.</text>
+  <defs>
+    <linearGradient id="panel" x1="142" y1="161" x2="590" y2="761" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A86E3F"/>
+      <stop offset="1" stop-color="#5C341A"/>
+    </linearGradient>
+  </defs>
+</svg>

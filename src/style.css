@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Prata&display=swap');
+
+:root {
+  font-family: 'Manrope', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --cream: #f4eadb;
+  --sand: #dcc8ac;
+  --walnut: #1a120f;
+  --walnut-soft: #2d221c;
+  --copper: #c48a52;
+  --mist: rgba(244, 234, 219, 0.72);
+  --line: rgba(207, 169, 126, 0.18);
+  --shadow: 0 30px 70px rgba(0, 0, 0, 0.28);
+  background: #120d0b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top, rgba(196, 138, 82, 0.18), transparent 26%),
+    #120d0b;
+  color: var(--cream);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#app,
+.page-shell {
+  min-height: 100vh;
+}
+
+.topbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.5rem;
+  background: linear-gradient(180deg, rgba(10, 7, 6, 0.86), rgba(10, 7, 6, 0));
+  backdrop-filter: blur(10px);
+}
+
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  border: 1px solid rgba(255, 243, 225, 0.22);
+  border-radius: 999px;
+  letter-spacing: 0.22rem;
+  font-size: 0.9rem;
+}
+
+.brand-name,
+.topnav,
+.hero-kicker,
+.section-label,
+.hero-note span,
+.detail-list span {
+  text-transform: uppercase;
+  letter-spacing: 0.16rem;
+  font-size: 0.72rem;
+}
+
+.brand-name,
+.topnav {
+  color: rgba(244, 234, 219, 0.9);
+}
+
+.topnav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: clip;
+}
+
+.hero-video,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-video {
+  object-fit: cover;
+  transform-origin: center center;
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(10, 7, 6, 0.86) 0%, rgba(10, 7, 6, 0.5) 42%, rgba(10, 7, 6, 0.6) 100%),
+    linear-gradient(180deg, rgba(10, 7, 6, 0.18), rgba(10, 7, 6, 0.75) 100%);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 18rem;
+  align-items: end;
+  gap: 2rem;
+  padding: 6.5rem 1.5rem 2rem;
+}
+
+.hero-copy {
+  width: min(42rem, 100%);
+}
+
+.hero-kicker,
+.section-label,
+.detail-list span,
+.hero-note span {
+  color: var(--sand);
+}
+
+.hero-copy h1,
+.intro-copy h2,
+.craft-panel h2,
+.cta-section h2 {
+  margin: 0;
+  font-family: 'Prata', serif;
+  line-height: 0.98;
+  font-weight: 400;
+}
+
+.hero-copy h1 {
+  max-width: 10ch;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+}
+
+.hero-summary,
+.intro-copy p,
+.detail-list p,
+.highlight-list li,
+.hero-note p {
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.hero-summary {
+  max-width: 34rem;
+  margin: 1.25rem 0 0;
+  color: var(--mist);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 12rem;
+  padding: 0.95rem 1.45rem;
+  border-radius: 999px;
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    background-color 0.28s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  color: #22150f;
+  background: linear-gradient(135deg, #e7c8a5, #bf7c40);
+}
+
+.button-secondary {
+  border: 1px solid rgba(255, 243, 225, 0.22);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hero-note {
+  align-self: center;
+  justify-self: end;
+  max-width: 18rem;
+  padding: 1.2rem;
+  border: 1px solid rgba(255, 243, 225, 0.16);
+  border-radius: 1.4rem;
+  background: rgba(17, 12, 10, 0.48);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.hero-note p {
+  margin: 0.75rem 0 0;
+  color: rgba(244, 234, 219, 0.86);
+}
+
+.intro,
+.craft,
+.cta-section {
+  padding: 5rem 1.5rem;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 2rem;
+  background: linear-gradient(180deg, #17100d, #241915);
+}
+
+.intro-copy h2,
+.craft-panel h2,
+.cta-section h2 {
+  max-width: 12ch;
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+}
+
+.intro-copy > p:last-child {
+  max-width: 36rem;
+  color: var(--mist);
+}
+
+.detail-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.detail-list article {
+  padding: 1.2rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.detail-list p {
+  margin: 0.5rem 0 0;
+  color: rgba(244, 234, 219, 0.86);
+}
+
+.craft {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 2rem;
+  align-items: center;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(196, 138, 82, 0.16), transparent 24%),
+    #f0e3d1;
+  color: var(--walnut);
+}
+
+.highlight-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.highlight-list li {
+  padding: 1.3rem 0;
+  border-top: 1px solid rgba(64, 41, 27, 0.18);
+}
+
+.cta-section {
+  text-align: center;
+  background: #120d0b;
+}
+
+.cta-section h2 {
+  max-width: 12ch;
+  margin: 0 auto 1.5rem;
+}
+
+@media (max-width: 980px) {
+  .topnav,
+  .hero-note {
+    display: none;
+  }
+
+  .hero-inner,
+  .intro,
+  .craft {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-inner {
+    align-items: end;
+  }
+}
+
+@media (max-width: 720px) {
+  .topbar,
+  .hero-inner,
+  .intro,
+  .craft,
+  .cta-section {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero-inner {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .hero-copy h1 {
+    max-width: 9ch;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
