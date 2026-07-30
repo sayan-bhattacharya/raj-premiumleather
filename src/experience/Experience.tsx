@@ -43,20 +43,23 @@ const chapters = [
 const detailPanels = [
   {
     name: 'Edge finish',
-    copy: 'Hand-painted edging that keeps the line clean and the profile disciplined in close view.',
+    copy: 'Hand-painted edges seal the profile cleanly, giving each piece the kind of finish expected in a serious leather atelier.',
   },
   {
     name: 'Hardware tone',
-    copy: 'Muted brass accents used sparingly, so the metal reads as confidence rather than decoration.',
+    copy: 'Muted brass is used with restraint, so the hardware supports the silhouette instead of competing with it.',
   },
   {
     name: 'Carry profile',
-    copy: 'Structured volume designed to feel compact in hand while remaining practical through the day.',
+    copy: 'The carry profile stays structured and compact, with enough internal volume for everyday essentials without losing shape.',
   },
 ]
 
 export function Experience() {
   const [activePanel, setActivePanel] = useState(detailPanels[0].name)
+  const mediaBase = import.meta.env.BASE_URL
+  const filmSrc = `${mediaBase}media/Handbag_macro_detail_film_202607271431.mp4`
+  const posterSrc = `${mediaBase}media/handbag-film-poster.jpg`
 
   const activeCopy = useMemo(
     () => detailPanels.find((item) => item.name === activePanel)?.copy ?? detailPanels[0].copy,
@@ -80,33 +83,37 @@ export function Experience() {
 
       <section className="hero-panel">
         <div className="hero-copy">
-          <p className="section-kicker">Premium handbag collection</p>
-          <h1>The film belongs in the center of the story.</h1>
+          <p className="section-kicker">House launch | Autumn leather edit</p>
+          <h1>Leather goods shaped with restraint, weight, and polish.</h1>
           <p className="hero-summary">
-            A scroll-led microsite built around the real handbag macro film, with the product held
-            at the center and the narrative wrapped around material, structure, and finish.
+            Raj Premium Leather is presented like a real boutique label: full-grain surfaces,
+            measured brass hardware, disciplined construction, and a quieter expression of modern
+            luxury for everyday carry.
           </p>
           <div className="hero-actions">
             <a className="primary-button" href="#film">
-              Enter the film
+              View the leather study
             </a>
             <Link className="secondary-button" to="/prompt/">
-              View brief archive
+              Open brand brief
             </Link>
           </div>
         </div>
 
         <div className="hero-spec">
           <span className="section-kicker">Collection note</span>
-          <p>Quiet luxury informed by leather inspection, boutique display language, and tactile close-up motion.</p>
+          <p>
+            Designed to read like a premium leather house launch, with the product shown through
+            material honesty rather than trend-heavy styling.
+          </p>
         </div>
       </section>
 
       <section className="film-track" id="film">
         <div className="film-stage">
           <ScrollVideo
-            poster="/media/handbag-film-poster.jpg"
-            src="/media/Handbag_macro_detail_film_202607271431.mp4"
+            poster={posterSrc}
+            src={filmSrc}
             triggerSelector="#film"
           />
 
@@ -143,12 +150,12 @@ export function Experience() {
 
       <section className="detail-section" id="details">
         <div className="detail-section__copy">
-          <p className="section-kicker">Interactive detail reveal</p>
-          <h2>Inspect the collection language one decision at a time.</h2>
+          <p className="section-kicker">Leather specification</p>
+          <h2>Every premium signal should feel earned under close inspection.</h2>
           <p>
-            The interface stays restrained, but it still needs one tactile moment. These detail
-            switches let the page talk like a real luxury product presentation instead of a generic
-            template.
+            The brand language is grounded in the same cues buyers use in person: the neatness of
+            the edge paint, the calm finish of the hardware, and the way the bag holds its form in
+            hand.
           </p>
         </div>
 
@@ -172,8 +179,13 @@ export function Experience() {
       </section>
 
       <section className="finale-section" id="finale">
-        <p className="section-kicker">Commercial close</p>
-        <h2>Ready for client review, now with the film visibly centered and the story shaped around it.</h2>
+        <p className="section-kicker">Private preview</p>
+        <h2>A more realistic leather-brand presentation, with the film rendered correctly at the center.</h2>
+        <p>
+          The experience now behaves like a real product microsite: the video asset resolves from
+          the correct Pages path, the storytelling stays commercial, and the visual language feels
+          closer to a premium accessories label.
+        </p>
         <div className="finale-actions">
           <a className="primary-button" href="https://sayan-bhattacharya.github.io/raj-premiumleather/">
             Open live preview

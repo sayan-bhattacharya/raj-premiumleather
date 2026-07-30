@@ -36,6 +36,14 @@ export function ScrollVideo({ poster, src, triggerSelector }: ScrollVideoProps) 
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
+    setHasError(false)
+    setIsReady(false)
+    video.load()
+  }, [poster, src])
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
 
     const syncBuffered = () => {
       if (video.buffered.length === 0 || durationRef.current === 0) {
@@ -180,9 +188,11 @@ export function ScrollVideo({ poster, src, triggerSelector }: ScrollVideoProps) 
           src={src}
           poster={poster}
           muted
+          autoPlay
           playsInline
           preload="auto"
           disablePictureInPicture
+          aria-label="Macro leather handbag film"
         />
         <div className="scroll-video-status" aria-hidden="true">
           <span style={{ width: `${bufferedRatio * 100}%` }} />
