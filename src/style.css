@@ -195,6 +195,19 @@ button {
   margin-top: 2rem;
 }
 
+.hero-city-notes {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 1.4rem 0 0;
+  color: rgba(239, 228, 212, 0.58);
+  text-transform: uppercase;
+  letter-spacing: 0.14rem;
+  font-size: 0.72rem;
+}
+
 .primary-button,
 .secondary-button,
 .prompt-button,
@@ -241,6 +254,38 @@ button {
   position: relative;
   min-height: 520vh;
   padding-bottom: 5rem;
+}
+
+.chapter-rail {
+  position: fixed;
+  top: 50%;
+  right: 1.3rem;
+  z-index: 40;
+  display: grid;
+  gap: 0.7rem;
+  transform: translateY(-50%);
+}
+
+.chapter-rail__item {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgba(198, 144, 89, 0.18);
+  border-radius: 0.9rem;
+  background: rgba(20, 14, 11, 0.55);
+  color: rgba(239, 228, 212, 0.84);
+  backdrop-filter: blur(10px);
+}
+
+.chapter-rail__item span {
+  color: var(--brass);
+  font-size: 0.72rem;
+  letter-spacing: 0.18rem;
+}
+
+.chapter-rail__item small {
+  font-size: 0.72rem;
+  line-height: 1.35;
 }
 
 .film-stage {
@@ -411,6 +456,39 @@ button {
   color: rgba(239, 228, 212, 0.8);
 }
 
+.ledger-section {
+  width: min(1180px, calc(100% - 2.4rem));
+  margin: 0 auto;
+  padding: 1rem 0 6rem;
+}
+
+.ledger-section__copy h2 {
+  margin: 0;
+  font-family: 'Prata', serif;
+  font-weight: 400;
+  line-height: 1;
+  max-width: 11ch;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+.ledger-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.ledger-grid article {
+  padding: 1.5rem 0 0;
+  border-top: 1px solid var(--rule);
+}
+
+.ledger-grid p {
+  margin: 0.7rem 0 0;
+  color: rgba(239, 228, 212, 0.82);
+  line-height: 1.7;
+}
+
 .detail-section {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 28rem);
@@ -537,11 +615,16 @@ button {
 @media (max-width: 1040px) {
   .hero-panel,
   .detail-section,
-  .prompt-grid {
+  .prompt-grid,
+  .ledger-grid {
     grid-template-columns: 1fr;
   }
 
   .site-nav {
+    display: none;
+  }
+
+  .chapter-rail {
     display: none;
   }
 
@@ -587,6 +670,10 @@ button {
 
   .film-track {
     min-height: 460vh;
+  }
+
+  .hero-city-notes {
+    gap: 0.45rem;
   }
 
   .film-stage {

@@ -29,10 +29,10 @@ export function PromptPage() {
         </div>
 
         <section className="prompt-hero">
-          <h1>Reconstruction brief for the leather microsite.</h1>
+          <h1>Reconstruction brief for the ECOTARA microsite.</h1>
           <p>
-            This archive preserves the exact concept direction, source asset path, and build intent
-            behind the experience.
+            This archive preserves the exact concept direction, source asset path, and brand logic
+            behind the ECOTARA experience.
           </p>
         </section>
 

@@ -6,39 +6,41 @@ const chapters = [
   {
     id: '01',
     label: 'Material reveal',
-    title: 'Grain that reads like topography.',
+    title: 'Full-grain depth that holds the light.',
     body:
-      'The macro film lets the leather surface lead. Every pore, edge stain, and soft shift in light builds the perception of depth before a single product claim appears.',
+      'The macro film opens on surface truth: pores, natural tension, edge stain, and warm tonal shifts that immediately place ECOTARA in the world of real premium leather rather than decorative imitation.',
   },
   {
     id: '02',
     label: 'Form and silhouette',
-    title: 'Structure held in quiet proportion.',
+    title: 'A silhouette disciplined into daily elegance.',
     body:
-      'The silhouette stays deliberate and compact. It feels composed rather than decorative, with enough firmness to register as premium the moment it enters frame.',
+      'The profile stays composed and architectural. The bag reads as refined in hand, but not fragile, balancing structured luxury with everyday use across Indian city movement.',
   },
   {
     id: '03',
     label: 'Function and carry',
-    title: 'Built for repeated, elegant use.',
+    title: 'Carry logic made for real routines.',
     body:
-      'Closures, carry points, and internal organization are framed as daily luxuries. The experience moves from admiration into ownership without becoming loud.',
+      'Closures, internal layout, and carry points are framed as quiet conveniences. The language moves from admiration to ownership without slipping into loud, trend-led selling.',
   },
   {
     id: '04',
     label: 'Craft and durability',
-    title: 'Hardware, stitch, and finish in sync.',
+    title: 'Stitch, edge, and hardware kept in agreement.',
     body:
-      'Warm brass notes, measured seams, and clean folded edges signal longevity. The product promise is shown through construction detail rather than sales-heavy language.',
+      'Muted brass, measured seams, and disciplined fold lines signal long-wear value. The promise is communicated through construction detail, not inflated claims.',
   },
   {
     id: '05',
     label: 'Commercial close',
-    title: 'A premium handbag line ready for private preview.',
+    title: 'A leather house ready for client and customer preview.',
     body:
-      'The final section turns the film into a product proposition: modern Indian luxury, editorial restraint, and a polished launch story ready to show a client.',
+      'The final chapter turns the study into a proposition: ECOTARA as a modern Indian premium leather label with enough polish for launch, presentation, and direct-to-consumer storytelling.',
   },
 ]
+
+const cityNotes = ['Delhi appointments', 'Mumbai evenings', 'Bengaluru workdays', 'Jaipur gifting']
 
 const detailPanels = [
   {
@@ -70,11 +72,12 @@ export function Experience() {
     <main className="experience-page" id="top">
       <header className="site-header">
         <a className="site-brand" href="#top">
-          <span className="site-brand__mark">RP</span>
-          <span className="site-brand__name">Raj Premium Leather</span>
+          <span className="site-brand__mark">ET</span>
+          <span className="site-brand__name">ECOTARA</span>
         </a>
         <nav className="site-nav" aria-label="Primary">
           <a href="#film">Film</a>
+          <a href="#ledger">Ledger</a>
           <a href="#details">Details</a>
           <a href="#finale">Finale</a>
           <Link to="/prompt/">Prompt</Link>
@@ -83,12 +86,12 @@ export function Experience() {
 
       <section className="hero-panel">
         <div className="hero-copy">
-          <p className="section-kicker">House launch | Autumn leather edit</p>
-          <h1>Leather goods shaped with restraint, weight, and polish.</h1>
+          <p className="section-kicker">ECOTARA | Premium leather for India</p>
+          <h1>Leather goods shaped for Indian city life, finished with calm precision.</h1>
           <p className="hero-summary">
-            Raj Premium Leather is presented like a real boutique label: full-grain surfaces,
-            measured brass hardware, disciplined construction, and a quieter expression of modern
-            luxury for everyday carry.
+            ECOTARA is positioned as a premium leather label with a quieter point of view: full-grain
+            surfaces, measured brass hardware, and structured handbags designed to move from workday
+            to evening without losing composure.
           </p>
           <div className="hero-actions">
             <a className="primary-button" href="#film">
@@ -98,18 +101,31 @@ export function Experience() {
               Open brand brief
             </Link>
           </div>
+          <ul className="hero-city-notes" aria-label="Brand setting notes">
+            {cityNotes.map((note) => (
+              <li key={note}>{note}</li>
+            ))}
+          </ul>
         </div>
 
         <div className="hero-spec">
-          <span className="section-kicker">Collection note</span>
+          <span className="section-kicker">House note</span>
           <p>
-            Designed to read like a premium leather house launch, with the product shown through
-            material honesty rather than trend-heavy styling.
+            Designed to read like a real leather-house launch, with the product explained through
+            material honesty, function, and finish rather than ornamental trend language.
           </p>
         </div>
       </section>
 
       <section className="film-track" id="film">
+        <div className="chapter-rail" aria-label="Film chapters">
+          {chapters.map((chapter) => (
+            <a key={chapter.id} href={`#chapter-${chapter.id}`} className="chapter-rail__item">
+              <span>{chapter.id}</span>
+              <small>{chapter.label}</small>
+            </a>
+          ))}
+        </div>
         <div className="film-stage">
           <ScrollVideo
             poster={posterSrc}
@@ -136,6 +152,7 @@ export function Experience() {
         <div className="chapter-stack">
           {chapters.map((chapter, index) => (
             <article
+              id={`chapter-${chapter.id}`}
               className={`chapter-card ${index % 2 === 0 ? 'chapter-card--left' : 'chapter-card--right'}`}
               key={chapter.id}
             >
@@ -145,6 +162,27 @@ export function Experience() {
               <p>{chapter.body}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="ledger-section" id="ledger">
+        <div className="ledger-section__copy">
+          <p className="section-kicker">Atelier ledger</p>
+          <h2>Premium signals, written like product truth instead of campaign noise.</h2>
+        </div>
+        <div className="ledger-grid">
+          <article>
+            <span className="section-kicker">Leather</span>
+            <p>Full-grain character, warm walnut depth, and surface variation that feels natural in hand.</p>
+          </article>
+          <article>
+            <span className="section-kicker">Construction</span>
+            <p>Disciplined edge paint, measured stitch spacing, and a silhouette designed to keep its shape.</p>
+          </article>
+          <article>
+            <span className="section-kicker">Positioning</span>
+            <p>Premium leather for India: polished enough for gifting, practical enough for everyday carry.</p>
+          </article>
         </div>
       </section>
 
@@ -180,11 +218,11 @@ export function Experience() {
 
       <section className="finale-section" id="finale">
         <p className="section-kicker">Private preview</p>
-        <h2>A more realistic leather-brand presentation, with the film rendered correctly at the center.</h2>
+        <h2>ECOTARA now reads like a real leather brand, with the film correctly rendering at the center.</h2>
         <p>
-          The experience now behaves like a real product microsite: the video asset resolves from
-          the correct Pages path, the storytelling stays commercial, and the visual language feels
-          closer to a premium accessories label.
+          The experience now behaves like a real product microsite: the video resolves from the
+          correct Pages path, the storytelling stays commercial, and the brand language feels closer
+          to a premium Indian accessories label.
         </p>
         <div className="finale-actions">
           <a className="primary-button" href="https://sayan-bhattacharya.github.io/raj-premiumleather/">
